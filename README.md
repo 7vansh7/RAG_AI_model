@@ -1,0 +1,1 @@
+***This is a education app that is powered by a generative AI(ChatGPT in this case)***
