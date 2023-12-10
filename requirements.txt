@@ -4,3 +4,4 @@ pinecone-client
 langchain_experimental
 python-dotenv
 python_dotenv
+sentence_transformers
