@@ -14,6 +14,7 @@ if document is not None:
 st.write('Task')
 task = st.selectbox('Pick your Task',['-','question-answering','summarisation'])
 
+model = st.selectbox('Select the model',['llama2','chatgpt'])
 
 if task == 'question-answering':
    with st.form("form"):
