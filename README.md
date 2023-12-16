@@ -1,4 +1,4 @@
-***This is a education app that is powered by a generative AI(Llama in this case)***
+***This is a RAG app that is powered by a generative AI(Llama in this case)***
 
 METHOD 1 (using the script)
 
@@ -15,3 +15,7 @@ METHOD 2 (entering all the commands manually)
 4. source ./env/bin/activate
 5. python3 -m requirements.txt
 6. streamlit run frontend.py
+
+Name of the .env varaibles - 
+LLAMA_API_KEY(for the llama key)
+PINECONE_KEY(for the pinecone key)
