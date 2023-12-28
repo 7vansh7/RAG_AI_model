@@ -205,3 +205,10 @@ def chat(llm,question):
     except Exception as e:
         print(e)
         return "Please ask again"
+
+
+def delete_index_data():
+
+    index = pinecone.Index("document-reader")
+    index.delete(delete_all=True, namespace='example-namespace')
+    return True

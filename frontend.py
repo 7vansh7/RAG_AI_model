@@ -2,7 +2,7 @@ import streamlit as st
 import backend as B
 
 
-st.set_page_config(page_title="AI Analyst")
+st.set_page_config(page_title="AI Analyst app")
 st.title(":rainbow[AI Analyst] :bar_chart: ")
 st.write('Task')
 task = st.selectbox('Pick your Task',['-','question-answering','summarization','pdf-image-analysis','chat'])
@@ -10,7 +10,8 @@ if task == 'pdf-image-analysis':
     model = 'gemini-pro-vision'
     st.write('Model: Gemini-pro-vision')
 else:
-    model = st.selectbox('Select the model',['gemini-ultra','gemini-pro','llama2','chatgpt'])
+    model = st.selectbox('Select the model',['gemini-pro'])
+st.write('More models to br available soon')
 model = B.model_used(model)
 if task == 'question-answering':
    
@@ -28,6 +29,12 @@ if task == 'question-answering':
             with st.spinner('💬...'):
                 answer = B.ques_to_answer(llm=model,question=question)
                 st.write(answer)
+    st.write('Please delete your data after using the app')
+    with st.form('delete vector-data'):
+        if st.form_submit_button('Delete Data'):
+            ans = B.delete_index_data()
+            if ans == True:
+                st.success('Data deleted successfully!')
 
 if task == 'summarization' :
         
