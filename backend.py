@@ -69,7 +69,7 @@ pinecone.init(
         api_key=api_key,      
         environment='gcp-starter'      
     )
-
+index = pinecone.Index("document-reader")
 def document_to_vector(document):
 
     file = document
@@ -207,8 +207,6 @@ def chat(llm,question):
         return "Please ask again"
 
 
-def delete_index_data():
+# def delete_index_data():
 
-    index = pinecone.Index("document-reader")
-    index.delete(delete_all=True, namespace='example-namespace')
-    return True
+#     print(index.delete(delete_all=True))

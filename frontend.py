@@ -11,7 +11,7 @@ if task == 'pdf-image-analysis':
     st.write('Model: Gemini-pro-vision')
 else:
     model = st.selectbox('Select the model',['gemini-pro'])
-st.write('More models to br available soon')
+st.write('More models to be added soon!!')
 model = B.model_used(model)
 if task == 'question-answering':
    
@@ -29,12 +29,12 @@ if task == 'question-answering':
             with st.spinner('💬...'):
                 answer = B.ques_to_answer(llm=model,question=question)
                 st.write(answer)
-    st.write('Please delete your data after using the app')
-    with st.form('delete vector-data'):
-        if st.form_submit_button('Delete Data'):
-            ans = B.delete_index_data()
-            if ans == True:
-                st.success('Data deleted successfully!')
+    # st.write('Please delete your data after using the app')
+    # with st.form('delete vector-data'):
+    #     if st.form_submit_button('Delete Data'):
+    #         ans = B.delete_index_data()
+    #         if ans == True:
+    #             st.success('Data deleted successfully!')
 
 if task == 'summarization' :
         
