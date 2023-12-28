@@ -5,3 +5,7 @@ langchain_experimental
 python-dotenv
 python_dotenv
 sentence_transformers
+pypdf
+google_generativeai
+langchain_google_genai
+llamaapi
