@@ -2,8 +2,8 @@ import streamlit as st
 import backend as B
 
 
-st.title(":rainbow[AI Analyst] :bar_chart: ")
 st.set_page_config(page_title="AI Analyst")
+st.title(":rainbow[AI Analyst] :bar_chart: ")
 st.write('Task')
 task = st.selectbox('Pick your Task',['-','question-answering','summarization','pdf-image-analysis','chat'])
 if task == 'pdf-image-analysis':
