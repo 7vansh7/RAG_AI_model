@@ -65,6 +65,7 @@ hf = HuggingFaceEmbeddings(
         model_kwargs=model_kwargs,
         encode_kwargs=encode_kwargs
     )
+
 pinecone.init(      
         api_key=api_key,      
         environment='gcp-starter'      
