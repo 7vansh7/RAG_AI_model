@@ -8,5 +8,5 @@ setup: requirements.txt
 
 commit: 
 	git add .
-	git commit -m '$(msg)'
+	git commit -m '$(m)'
 	git push origin main

@@ -37,7 +37,7 @@ if task == 'question-answering':
     #             st.success('Data deleted successfully!')
 
 
-st.write(' Write :blue[**CODE**] here')
+st.write(' Write your :blue[**CODE**] here')
 st.link_button(':cloud:',url='https://gitpod.new/',type="primary")
 
 if task == 'summarization' :
