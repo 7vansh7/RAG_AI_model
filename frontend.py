@@ -36,6 +36,10 @@ if task == 'question-answering':
     #         if ans == True:
     #             st.success('Data deleted successfully!')
 
+
+st.write(' Write :blue[**CODE**] here')
+st.link_button(':cloud:',url='https://gitpod.new/',type="primary")
+
 if task == 'summarization' :
         
      
@@ -76,3 +80,4 @@ if task == 'chat':
             with st.spinner('💬...'):
                 answer = B.chat(llm=model,question=question)
                 st.write(answer)
+
