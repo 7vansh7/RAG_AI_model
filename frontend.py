@@ -11,7 +11,7 @@ if task == 'pdf-image-analysis':
     st.write('Model: Gemini-pro-vision')
 else:
     model = st.selectbox('Select the model',['gemini-pro'])
-st.write('More models to be added soon!!')
+st.write('More :blue[models] to be added soon!!')
 model = B.model_used(model)
 if task == 'question-answering':
    
@@ -49,6 +49,7 @@ if task == 'summarization' :
             btn =st.form_submit_button('Upload')
         if document is not None:
             with st.form('summarize'):   
+                st.write('It could take a few minutes')
                 if st.form_submit_button('Summarize the text',type='primary'):
                     with st.spinner('Converting...'):
                         summary = B.summarize(llm=model, document=document)
