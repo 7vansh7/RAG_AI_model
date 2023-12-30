@@ -38,7 +38,7 @@ if task == 'question-answering':
 
 
 st.write(' Write your :blue[**CODE**] here')
-st.link_button(':cloud:',url='https://gitpod.new/',type="primary")
+st.link_button('GO',url='https://gitpod.new/',type="primary")
 
 if task == 'summarization' :
         
