@@ -11,7 +11,7 @@ if task == 'pdf-image-analysis':
     st.write('Model: Gemini-pro-vision')
 else:
     model = st.selectbox('Select the model',['gemini-pro'])
-st.write('More :blue[models] to be added soon!!')
+st.write('More :blue[MODELS] to be added soon!!')
 model = B.model_used(model)
 if task == 'question-answering':
    
