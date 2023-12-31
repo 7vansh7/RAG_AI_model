@@ -23,7 +23,7 @@ c1.divider()
 if task == 'question-answering':
    
     c1.write('Upload your document')
-    document = c1.file_uploader(label=' ')
+    document = c1.file_uploader(label=' ',type='pdf')
     if c1.button('Upload',type='primary'):
         if document is not None:
             B.document_to_vector(document)
@@ -45,7 +45,7 @@ if task == 'summarization' :
         
      
         c1.write('Upload your document')
-        document = c1.file_uploader(label=' ')
+        document = c1.file_uploader(label=' ',type='pdf')
         btn =c1.button('Upload',type='primary')
         if document is not None:  
                 c1.write('It could take a few minutes')
@@ -57,7 +57,7 @@ if task == 'summarization' :
 
 if task == 'pdf-image-analysis' :
      c1.write('Upload your document')
-     document = c1.file_uploader(label=' ')
+     document = c1.file_uploader(label=' ',type='pdf')
      btn =c1.button('Upload',type='primary')
 
      if document is not None:
