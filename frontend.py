@@ -85,4 +85,4 @@ string = ""
 a = c2.text_area(label='**NOTES**',placeholder='Write here',height=400)
 string += a
 c2.download_button(label='Download Notes',file_name='notes.txt',data=string)
-
+# add some error handling in the string and download button

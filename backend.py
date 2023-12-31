@@ -111,7 +111,7 @@ def summarize(llm,document):
         with NamedTemporaryFile(delete=False) as tmp:  
             tmp.write(bytes_data)                      
             data = PyPDFLoader(tmp.name)       
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size=4000, chunk_overlap=400,separators=['\n','\n\n'])    
+        text_splitter = RecursiveCharacterTextSplitter(chunk_size=4000, chunk_overlap=200,separators=['\n','\n\n'])    
         texts = data.load_and_split(text_splitter=text_splitter)
         print(len(texts))
         if len(texts) % 2 != 0:
@@ -122,6 +122,8 @@ def summarize(llm,document):
         * Make sure the word length is between 1000 to 3000
         * After giving the summary also give a seperate key points from the context and also expalin every key point vigourously
         * After the above two also give information headers or headings that define the main parts of the book
+        * please don't give any kind of finish_reason errors
+        * Don't give recitation error
         ```{text}```
         """
         prompt = PromptTemplate(template=prompt,input_variables=['text'])
@@ -143,6 +145,8 @@ def summarize(llm,document):
             print(f'slice:{x,y}')
             prompt2 = """
             Write a long summary for the following texts with at least 100 words each
+            Don't give RECITATION error, ALLOW RECITATION
+            please don't give any kind of finish_reason errors
             {text}
             """
             prompt2 = PromptTemplate(template=prompt2,input_variables=['text'])
@@ -161,7 +165,7 @@ def summarize(llm,document):
         return summary_final    
     except Exception as e:
         print(e)
-        return "Please try again!!"
+        return "Please try again!!,if already tried twice then PDF is not compatible for the model "
 
 # the flow of the summarizer is -->
 # 1. Takes in the pdf
@@ -211,3 +215,4 @@ def chat(llm,question):
 # def delete_index_data():
 
 #     print(index.delete(delete_all=True))
+    
